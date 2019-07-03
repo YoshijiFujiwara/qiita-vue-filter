@@ -2,8 +2,8 @@
     <div class="media">
         <img class="mr-3" src="https://via.placeholder.com/150" alt="Generic placeholder image">
         <div class="media-body">
-            <h5 class="mt-0">{{ heading | searchHighlight(search) }}</h5>
-            {{ body | searchHighlight(search) }}
+            <h5 class="mt-0" v-html="$options.filters.searchHighlight(heading, search)"></h5>
+            <p v-html="$options.filters.searchHighlight(body, search)"></p>
         </div>
     </div>
 </template>
