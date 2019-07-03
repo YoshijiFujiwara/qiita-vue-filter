@@ -15,8 +15,11 @@ export default {
         searchHighlight (value, search) {
             // 検索キーワードが入力されているとき
             if (search) {
-                // 検索キーワードに一致する部分を、spanタグに置換すればいいね
-                return value.replace(search, `<span class="bg-warning">${search}</span>`)
+                // 世紀表現で、一致する文字全てをハイライトする
+                const searchRegExp = new RegExp(search, 'ig')
+                return value.replace(searchRegExp, (match) => {
+                    return `<span class="bg-warning">${match}</span>`
+                })
             }
             // 検索キーワードが入力されていない場合は、ハイライトしない
             return value

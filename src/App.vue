@@ -3,7 +3,12 @@
     <div class="container">
       <div class="col">
         <div class="row">
-          <input v-model="search" class="form-control col-6" type="text" placeholder="検索" aria-label="Search">
+          <input v-model="search"
+                 class="form-control col-6"
+                 type="text"
+                 placeholder="検索"
+                 style="font-size: 30px;"
+                 aria-label="Search">
         </div>
         <media v-for="(media, index) in medias"
                :key="index"
